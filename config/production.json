@@ -1,0 +1,6 @@
+{
+  "mongoUrl": "mongodb+srv://Chidi-Nweze:chidinweze1@mernconnector.dqspp.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  "jwtSecret": "myTokenSecret",
+  "githubClientId": "ed52adf53f87fdd89df1",
+  "githubSecret": "267a8572c19cd3b30769568415f36e90825a85d2"
+}
