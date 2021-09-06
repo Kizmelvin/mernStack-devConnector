@@ -3,6 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { setAlert } from "../../actions/alert";
 import { register } from "../../actions/auth";
+import axios from "axios";
 import PropTypes from "prop-types";
 
 function Register({ setAlert, register, isAuthenticated }) {
@@ -23,13 +24,13 @@ function Register({ setAlert, register, isAuthenticated }) {
       setAlert("passwords do not match", "danger");
     } else {
       register({ name, email, password });
+
+      // Redirect if logged in
+      if (isAuthenticated) {
+        return <Redirect to="/dashboard" />;
+      }
     }
   };
-
-  // Redirect if logged in
-  if (isAuthenticated) {
-    return <Redirect to="/dashboard" />;
-  }
 
   return (
     <Fragment>
